@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/filter/AuthFilter.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/controller/CartServlet.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/controller/admin/AdminUserServlet.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/web/index.html</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/web/login.jsp</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/web/access-denied.jsp</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/web/admin/books.jsp</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/controller/LoginServlet.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/web/admin/dashboard.jsp</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/controller/HomeServlet.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/controller/LogoutServlet.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/controller/admin/AdminOrderServlet.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/dao/UserDAO.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/controller/admin/AdminCategoryServlet.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/web/admin/editCategory.jsp</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/web/META-INF/context.xml</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/dao/BookDAO.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/web/register.jsp</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/web/cart.jsp</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/controller/CheckoutServlet.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/controller/admin/StatisticsServlet.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/src/java/dao/CartDAO.java</file>
+            <file>file:/C:/Users/OS/Documents/NetBeansProjects/BookApp/web/admin/users.jsp</file>
+        </group>
+    </open-files>
+</project-private>
