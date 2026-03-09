@@ -1,0 +1,22 @@
+# NetBeans build output
+build/
+dist/
+nbproject/private/
+nbbuild/
+
+# WAR file (built artifact)
+*.war
+*.jar
+*.class
+
+# IDE settings
+.idea/
+*.iml
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

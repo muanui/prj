@@ -39,6 +39,9 @@ public class CheckoutServlet extends HttpServlet {
         User user = (User) req.getSession().getAttribute("user");
         String address = req.getParameter("address");
         String note = req.getParameter("note");
+        String paymentMethod = req.getParameter("paymentMethod");
+        if (paymentMethod == null || paymentMethod.isEmpty())
+            paymentMethod = "COD";
 
         List<CartItem> items = cartDAO.getByUser(user.getId());
         if (items.isEmpty()) {
@@ -47,11 +50,26 @@ public class CheckoutServlet extends HttpServlet {
         }
 
         BigDecimal total = items.stream().map(CartItem::getSubtotal).reduce(BigDecimal.ZERO, BigDecimal::add);
-        int orderId = orderDAO.createOrder(user.getId(), total, address, note, items);
+
+        String initialStatus;
+        switch (paymentMethod) {
+            case "BANK":
+                initialStatus = "Chờ xác nhận thanh toán";
+                break;
+            case "WALLET":
+                initialStatus = "Chờ xác nhận ví điện tử";
+                break;
+            default:
+                initialStatus = "Chờ xử lý";
+        }
+
+        int orderId = orderDAO.createOrder(user.getId(), total, initialStatus, address, note, items);
 
         if (orderId > 0) {
             cartDAO.clearCart(user.getId());
             req.setAttribute("orderId", orderId);
+            req.setAttribute("paymentMethod", paymentMethod);
+            req.setAttribute("initialStatus", initialStatus);
             req.getRequestDispatcher("/orderSuccess.jsp").forward(req, res);
         } else {
             req.setAttribute("error", "Đặt hàng thất bại. Vui lòng thử lại!");

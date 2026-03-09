@@ -83,6 +83,14 @@
                                                                             <option value="Chờ xử lý"
                                                                                 ${ord.status=='Chờ xử lý'
                                                                                 ?'selected':''}>Chờ xử lý</option>
+                                                                            <option value="Chờ xác nhận thanh toán"
+                                                                                ${ord.status=='Chờ xác nhận thanh toán'
+                                                                                ?'selected':''}>Chờ xác nhận thanh
+                                                                                toán</option>
+                                                                            <option value="Chờ xác nhận ví điện tử"
+                                                                                ${ord.status=='Chờ xác nhận ví điện tử'
+                                                                                ?'selected':''}>Chờ xác nhận ví điện
+                                                                                tử</option>
                                                                             <option value="Đang giao"
                                                                                 ${ord.status=='Đang giao'
                                                                                 ?'selected':''}>Đang giao</option>

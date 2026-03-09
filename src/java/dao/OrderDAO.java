@@ -30,9 +30,9 @@ public class OrderDAO {
     }
 
     /** Tạo order mới từ giỏ hàng, trả về orderId hoặc -1 nếu lỗi */
-    public int createOrder(int userId, BigDecimal total, String address, String note,
+    public int createOrder(int userId, BigDecimal total, String status, String address, String note,
             List<CartItem> items) {
-        String sqlOrder = "INSERT INTO Orders(user_id,total,status,address,note) VALUES(?,?,N'Chờ xử lý',?,?) ";
+        String sqlOrder = "INSERT INTO Orders(user_id,total,status,address,note) VALUES(?,?,?,?,?) ";
         String sqlDetail = "INSERT INTO OrderDetails(order_id,book_id,quantity,price) VALUES(?,?,?,?)";
         Connection conn = null;
         try {
@@ -44,8 +44,9 @@ public class OrderDAO {
             try (PreparedStatement ps = conn.prepareStatement(sqlOrder, Statement.RETURN_GENERATED_KEYS)) {
                 ps.setInt(1, userId);
                 ps.setBigDecimal(2, total);
-                ps.setString(3, address); // note column = address dùng làm note giao hàng
-                ps.setString(4, note);
+                ps.setString(3, status);
+                ps.setString(4, address);
+                ps.setString(5, note);
                 ps.executeUpdate();
                 ResultSet keys = ps.getGeneratedKeys();
                 if (keys.next())
