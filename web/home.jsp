@@ -19,6 +19,15 @@
 
                             <!-- HERO BANNER -->
                             <section class="hero">
+                                <!-- Floating books background -->
+                                <div class="hero-floating-book hero-floating-book-1">&#128218;</div>
+                                <div class="hero-floating-book hero-floating-book-2">&#128218;</div>
+                                <div class="hero-floating-book hero-floating-book-3">&#128218;</div>
+                                <!-- Floating brand text -->
+                                <div class="hero-floating-text hero-floating-text-1">ThuanVaDatShopp</div>
+                                <div class="hero-floating-text hero-floating-text-2">ThuanVaDatShopp</div>
+                                <div class="hero-floating-text hero-floating-text-3">ThuanVaDatShopp</div>
+
                                 <div class="hero-content">
                                     <div class="hero-badge">&#127942; Được tin dùng bởi hàng triệu độc giả</div>
                                     <h1>Kho Sách Uy Tín<br /><span class="hero-highlight">Số 1 Việt Nam</span></h1>
