@@ -34,9 +34,9 @@ public class HomeServlet extends HttpServlet {
 
     private void handleHome(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
-        req.setAttribute("featuredBooks", bookDAO.getFeatured(8));
-        req.setAttribute("newestBooks", bookDAO.getNewest(8));
-        req.setAttribute("bestsellerBooks", bookDAO.getBestsellers(8));
+        req.setAttribute("featuredBooks", bookDAO.getFeatured(10));
+        req.setAttribute("newestBooks", bookDAO.getNewest(10));
+        req.setAttribute("bestsellerBooks", bookDAO.getBestsellers(10));
         req.setAttribute("categories", catDAO.getAll());
         req.getRequestDispatcher("/home.jsp").forward(req, res);
     }

@@ -13,7 +13,7 @@ public class DBContact {
     // Kết nối tới SQL Server qua TCP/IP (tránh dùng named instance để không phụ thuộc SQL Browser)
     private static final String SERVER = "localhost";
     private static final String PORT = "1433"; // nếu bạn cấu hình cổng khác, hãy sửa lại cho đúng
-    private static final String DATABASE = "BookStoreDB2";
+    private static final String DATABASE = "BookApp";
 
     // Đăng nhập SQL Server bằng tài khoản SQL (không dùng integratedSecurity/NTLM)
     // TODO: thay đổi USERNAME và PASSWORD cho đúng với tài khoản SQL Server của bạn

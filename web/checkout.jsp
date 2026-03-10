@@ -129,7 +129,7 @@
                                                 <p><strong>Số tài khoản:</strong> 1000 0340 448</p>
                                                 <p><strong>Chủ tài khoản:</strong> Nguyễn Tiến Đạt</p>
                                                 <div class="bank-qr-wrapper">
-                                                    <img src="<%= cp %>/images/tpbank-qr.png"
+                                                    <img src="<%= cp %>/images/books/qr.png.jpg"
                                                         alt="QR TPBank - Nguyễn Tiến Đạt" class="bank-qr">
                                                 </div>
                                             </div>
