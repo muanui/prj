@@ -27,12 +27,27 @@
                             <div class="book-detail-wrapper">
                                 <!-- Cover -->
                                 <div class="book-detail-cover">
-                                    <div class="book-cover-placeholder" data-title="${book.title}"
-                                        style="height:360px;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:0.9rem;font-weight:600;color:#fff;border-radius:var(--radius)">
-                                        <span style="font-size:5rem">&#128218;</span>
-                                        <span
-                                            style="margin-top:12px;padding:0 1rem;text-align:center">${book.title}</span>
-                                    </div>
+                                    <c:choose>
+                                        <c:when test="${not empty book.image and book.image != 'default.jpg'}">
+                                            <img src="<%= cp %>/images/books/${book.image}" alt="${book.title}"
+                                                style="width:100%;height:360px;object-fit:cover;display:block;border-radius:var(--radius)"
+                                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                                            <div class="book-cover-placeholder" data-title="${book.title}"
+                                                style="height:360px;width:100%;display:none;flex-direction:column;align-items:center;justify-content:center;font-size:0.9rem;font-weight:600;color:#fff;border-radius:var(--radius)">
+                                                <span style="font-size:5rem">&#128218;</span>
+                                                <span
+                                                    style="margin-top:12px;padding:0 1rem;text-align:center">${book.title}</span>
+                                            </div>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <div class="book-cover-placeholder" data-title="${book.title}"
+                                                style="height:360px;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:0.9rem;font-weight:600;color:#fff;border-radius:var(--radius)">
+                                                <span style="font-size:5rem">&#128218;</span>
+                                                <span
+                                                    style="margin-top:12px;padding:0 1rem;text-align:center">${book.title}</span>
+                                            </div>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </div>
 
                                 <!-- Info -->
@@ -111,10 +126,24 @@
                                             <div class="book-card animate-in"
                                                 onclick="location.href='<%= cp %>/book-detail?id=${b.id}'">
                                                 <div class="book-cover">
-                                                    <div class="book-cover-placeholder" data-title="${b.title}">
-                                                        <span style="font-size:2.5rem">&#128218;</span>
-                                                        <span style="margin-top:8px">${b.title}</span>
-                                                    </div>
+                                                    <c:choose>
+                                                        <c:when
+                                                            test="${not empty b.image and b.image != 'default.jpg'}">
+                                                            <img src="<%= cp %>/images/books/${b.image}"
+                                                                alt="${b.title}" class="book-cover-img"
+                                                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                                                            <div class="book-cover-placeholder" style="display:none">
+                                                                <span style="font-size:2.5rem">&#128218;</span>
+                                                                <span style="margin-top:8px">${b.title}</span>
+                                                            </div>
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <div class="book-cover-placeholder">
+                                                                <span style="font-size:2.5rem">&#128218;</span>
+                                                                <span style="margin-top:8px">${b.title}</span>
+                                                            </div>
+                                                        </c:otherwise>
+                                                    </c:choose>
                                                 </div>
                                                 <div class="book-info">
                                                     <div class="book-title">${b.title}</div>

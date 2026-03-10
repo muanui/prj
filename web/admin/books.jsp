@@ -37,7 +37,7 @@
                                                 <table>
                                                     <thead>
                                                         <tr>
-                                                            <th>#</th>
+                                                            <th>Ảnh</th>
                                                             <th>Tiêu đề</th>
                                                             <th>Tác giả</th>
                                                             <th>Danh mục</th>
@@ -53,7 +53,21 @@
                                                     <tbody>
                                                         <c:forEach var="book" items="${books}">
                                                             <tr>
-                                                                <td>${book.id}</td>
+                                                                <td>
+                                                                    <c:choose>
+                                                                        <c:when
+                                                                            test="${not empty book.image and book.image != 'default.jpg'}">
+                                                                            <img src="<%= cp %>/images/books/${book.image}"
+                                                                                alt="cover"
+                                                                                style="width:42px;height:56px;object-fit:cover;border-radius:4px;"
+                                                                                onerror="this.src='';this.style.display='none'" />
+                                                                        </c:when>
+                                                                        <c:otherwise>
+                                                                            <span
+                                                                                style="font-size:1.6rem">&#128218;</span>
+                                                                        </c:otherwise>
+                                                                    </c:choose>
+                                                                </td>
                                                                 <td style="max-width:180px;font-weight:600">
                                                                     ${book.title}</td>
                                                                 <td>${book.author}</td>

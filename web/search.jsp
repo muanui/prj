@@ -91,10 +91,24 @@
                                             <div class="book-card animate-in"
                                                 onclick="location.href='<%= cp %>/book-detail?id=${book.id}'">
                                                 <div class="book-cover">
-                                                    <div class="book-cover-placeholder" data-title="${book.title}">
-                                                        <span style="font-size:2.5rem">&#128218;</span>
-                                                        <span style="margin-top:8px">${book.title}</span>
-                                                    </div>
+                                                    <c:choose>
+                                                        <c:when
+                                                            test="${not empty book.image and book.image != 'default.jpg'}">
+                                                            <img src="<%= cp %>/images/books/${book.image}"
+                                                                alt="${book.title}" class="book-cover-img"
+                                                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                                                            <div class="book-cover-placeholder" style="display:none">
+                                                                <span style="font-size:2.5rem">&#128218;</span>
+                                                                <span style="margin-top:8px">${book.title}</span>
+                                                            </div>
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <div class="book-cover-placeholder">
+                                                                <span style="font-size:2.5rem">&#128218;</span>
+                                                                <span style="margin-top:8px">${book.title}</span>
+                                                            </div>
+                                                        </c:otherwise>
+                                                    </c:choose>
                                                     <c:if test="${book.onSale}">
                                                         <span class="book-badge">Sale</span>
                                                     </c:if>

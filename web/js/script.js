@@ -53,14 +53,23 @@ function getBookGradient(title) {
         'linear-gradient(135deg,#2193b0,#6dd5ed)',
     ];
     let hash = 0;
-    for (let i = 0; i < (title||'').length; i++) hash = (hash << 5) - hash + title.charCodeAt(i);
+    for (let i = 0; i < (title || '').length; i++) hash = (hash << 5) - hash + title.charCodeAt(i);
     return gradients[Math.abs(hash) % gradients.length];
 }
 
 // Apply gradients to all cover placeholders
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.book-cover-placeholder').forEach(el => {
-        const title = el.dataset.title || '';
-        el.style.background = getBookGradient(title);
+        const title = el.dataset.title || el.closest('.book-card') ? '' : '';
+        const t = el.dataset.title || (el.closest('.book-info') ? el.closest('.book-info').querySelector('.book-title')?.textContent : '') || '';
+        el.style.background = getBookGradient(t);
     });
 });
+
+// ===== Carousel scroll (arrow buttons) =====
+function scrollCarousel(id, direction) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    // Scroll by 2 card widths (200px card + 19px gap ≈ 219px) × 2
+    el.scrollBy({ left: direction * 438, behavior: 'smooth' });
+}
