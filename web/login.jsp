@@ -6,7 +6,7 @@
 
         <head>
             <meta charset="UTF-8" />
-            <title>Đăng nhập - BookApp</title>
+            <title>Đăng nhập - ThuanVaDatShopp</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <link rel="stylesheet" href="<%= cp %>/css/style.css" />
         </head>
@@ -15,7 +15,7 @@
             <div class="auth-container">
                 <div class="auth-box animate-in">
                     <div style="text-align:center;font-size:3rem;margin-bottom:.5rem">&#128218;</div>
-                    <h1 class="auth-title">BookApp</h1>
+                    <h1 class="auth-title">ThuanVaDatShopp</h1>
                     <p class="auth-subtitle">Chào mừng trở lại! Vui lòng đăng nhập.</p>
 
                     <% if (request.getAttribute("error") !=null) { %>
@@ -37,7 +37,7 @@
                                                 placeholder="Nhập mật khẩu" required />
                                         </div>
                                         <button type="submit" class="btn btn-primary w-100 btn-lg mt-2">
-                                            &#128274; Đăng nhập
+                                             Đăng nhập
                                         </button>
                                     </form>
 
